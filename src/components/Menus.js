@@ -3,14 +3,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import ListItem from "@material-ui/core/ListItem";
+
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import { withStyles } from "@material-ui/core/styles";
-import Collapse from "@material-ui/core/Collapse";
-import List from "@material-ui/core/List";
 import { fade } from "@material-ui/core/styles/colorManipulator";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 
 const styles = theme => {
   return {
@@ -27,9 +23,9 @@ const styles = theme => {
       boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px"
     },
     menuItem: {
-      padding: "22px 18px",
+      padding: "17px 18px",
       color: "white",
-      fontSize: 14,
+      fontSize: 12,
       "&:focus": {
         backgroundColor: theme.palette.primary.main,
         "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
@@ -119,8 +115,8 @@ class NestedMenuItem extends React.Component {
   renderLargeMenus() {
     // eslint-disable-next-line react/prop-types
     const { menu, key, classes } = this.props;
-    const { open } = this.state;
-
+    
+    const { open, anchorEl } = this.state;
     // no sub menus
     if (!menu.subMenus || !menu.subMenus.length) {
       return (
@@ -135,29 +131,31 @@ class NestedMenuItem extends React.Component {
 
     return (
       <div>
-        <ListItem key={key} classes={{ root: classes.menuItem }} onClick={this.handleClick}>
-          <ListItemIcon style={{ color: "white" }}>{menu.icon}</ListItemIcon>
-          <span>{menu.text}</span>
-          {open ? (
-            <ExpandMore className={classes.chevronIcon} />
-          ) : (
-            <KeyboardArrowRight className={classes.chevronIcon} />
-          )}
-        </ListItem>
+      
+      <MenuItem key={key} classes={{ root: classes.menuItem }} onClick={this.handleClick}>
+        <ListItemIcon className={classes.menuIcon}>{menu.icon}</ListItemIcon>
+        <span>{menu.text}</span>
+
 
         {/* only open when the menu is open and Nav Drawer is open */}
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding classes={{ root: classes.subMenus }}>
-            {menu.subMenus.map((subMenu, index) => (
-              <Link key={index} to={subMenu.link}>
-                <MenuItem key={index} classes={{ root: classes.menuItem }}>
-                  <ListItemIcon style={{ color: "white" }}>{subMenu.icon}</ListItemIcon>
-                  <span>{subMenu.text}</span>
-                </MenuItem>
-              </Link>
-            ))}
-          </List>
-        </Collapse>
+        <div
+          ref={el => {
+            this.anchor = el;
+          }}
+          style={{ position: "absolute", right: 0 }}
+        />
+
+        <Menu classes={{ paper: classes.popupSubMenus }} open={open} anchorEl={anchorEl}>
+          {menu.subMenus.map((subMenu, index) => (
+            <Link key={index} to={subMenu.link}>
+              <MenuItem key={index} classes={{ root: classes.menuItem }}>
+                <ListItemIcon style={{ color: "white" }}>{subMenu.icon}</ListItemIcon>
+                <span>{subMenu.text}</span>
+              </MenuItem>
+            </Link>
+          ))}
+        </Menu>
+        </MenuItem>
       </div>
     );
   }

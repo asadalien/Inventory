@@ -5,71 +5,94 @@ import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
 import { grey } from "@material-ui/core/colors";
-import Divider from "@material-ui/core/Divider";
+
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import PageBase from "../PageBase";
-import styled from 'styled-components';
+//dropzone
+import { DropzoneArea } from 'material-ui-dropzone';
+//numeric input
 
+//chekcbox
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
-
-
-
+import Grid from '@material-ui/core/Grid';
+import SunEditor from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css';
 
 const FormPage = () => {
+
+  
   const styles = {
 
-
-
-    
     toggleDiv: {
-      marginTop: 20,
-      marginBottom: 5
+      marginTop: 5,
+      marginBottom: 1
+    },
+    toggleDive: {
+      
+      height:60
     },
     toggleLabel: {
-      color: grey[400],
-      fontWeight: 100
+      color: grey[4000],
+      fontWeight: 50
     },
     buttons: {
-      marginTop: 30,
+      marginTop: 10,
       float: "right"
     },
     saveButton: {
-      marginLeft: 5
-    }
+      marginLeft: 3
+    },
+  dropzone: {
+    
+      height: 2
+      }  ,
+      title:{
+color:"secondary"
+      } 
   };
 
-  return (
   
+  return (
 
-    <PageBase title="Add Product" navigation="Add product">
+    <PageBase  title="Add Product" >
       <form>
-      
-        <TextField
+      <Grid container spacing={3}>
+
+        
+        <Grid item xs={5}>
+         <TextField
           hintText="Title"
           label="Title"
-          fullWidth={true}
-          margin="normal"
-        />
+          fullWidth={true} />
+          </Grid>
 
-<TextField
+          <Grid item xs={2}>
+          </Grid>
+          <Grid item xs={5}>
+          <TextField
           hintText="Price"
           label="Price"
           fullWidth={true}
-          margin="normal"
-        />
+           />
+          </Grid>
+         </Grid>
+         <br></br>
 
-<TextField
-          id="standard-multiline-static"
-          label="Description"
-          hintText="Description"
-          multiline
-          rows={4}
-          fullWidth={true}
-          
-        />
-<br></br>
-        <FormControl fullWidth={true}>
+        
+         <h2 style={styles.toggledi}><b>Description</b></h2>
+         <SunEditor autoFocus={true} setDefaultStyle="font-family: cursive; font-size: 15px;" name="description" placeholder="Add Discription Here..."
+         enableToolbar={true} setOptions={{
+          height: 120
+  }} />
+      
+      
+
+         <Grid container spacing={1}>
+         <Grid item xs={5}>
+         <FormControl fullWidth={true}>
           <InputLabel htmlFor="City">Category</InputLabel>
           <Select
             inputProps={{
@@ -77,7 +100,7 @@ const FormPage = () => {
               id: "Category"
             }}
             fullWidth={true}
-            margin="normal"
+            margin="center"
           >
             <MenuItem value="">
               <em>None</em>
@@ -85,21 +108,68 @@ const FormPage = () => {
             <MenuItem value={"London"}>Sports</MenuItem>
             <MenuItem value={"Paris"}>Casual</MenuItem>
             <MenuItem value={"Rome"}>Rome</MenuItem>
-          </Select>
+            </Select>
+            </FormControl>
+            </Grid>
+      
           
-    
-
-
-
-        </FormControl>
+          
+          <Grid item xs={2}>
+          <FormControlLabel
+          style={styles.toggleLabel}
+          value="Taxable Product"
+          control={<Switch
+            
+            color="primary"
+            name="checkedB"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />}
+          label="Taxable Product"
+          labelPlacement="top"
+         />
+        </Grid>
+        
 
 
         
-        <Divider />
-                    <Wrapper class="label" for="input-file">Upload Product Image:</Wrapper>
-                     <br /> <Input type="file" name="attachment[]"  multiple="multiple"></Input>
+        <Grid item xs={5}>
+        <FormControl fullWidth={true}>
+          <InputLabel htmlFor="stock">Stock Status</InputLabel>
+          <Select
+            inputProps={{
+              name: "stock",
+              id: "stock"
+            }}
+            fullWidth={true}
+            margin="center"
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={"London"}>In Stock</MenuItem>
+            <MenuItem value={"Paris"}>Out of Stock</MenuItem>
+          </Select>
+          
+        </FormControl>
+        
       
-     <div style={styles.buttons}>
+        </Grid>
+        </Grid>
+        
+        
+        
+        <br></br>
+        
+      
+
+
+
+          <DropzoneArea
+  acceptedFiles={['image/*']}
+  dropzoneText={"Drag and drop or Select Image to upload"}
+  onChange={(files) => console.log('Files:', files)}
+/>
+             <div style={styles.buttons}>
           <Link to="/">
             <Button variant="contained">Cancel</Button>
           </Link>
@@ -114,35 +184,12 @@ const FormPage = () => {
           </Button>
         </div>
       </form>
+      
     </PageBase>
   );
 };
 
 export default FormPage;
 
-const Wrapper = styled.label`
-display: block;
-margin-bottom: 1em;
-font-size: 1em;
-color: #fff;
-opacity: .9;
-font-weight: bold;
-`;
 
 
-
-const Input = styled.input`
-content: 'Select some files';
-  display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 10pt;
-`;

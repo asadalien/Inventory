@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
 import MaterialTable from 'material-table';
+import SocialButtons from '../Products/SocialButtons'
+
 
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
@@ -18,6 +21,8 @@ export default function MaterialTableDemo() {
   });
 
   return (
+<Fragment>   
+  <SocialButtons></SocialButtons>
     <MaterialTable
       title="All Products"
       columns={state.columns}
@@ -59,6 +64,6 @@ export default function MaterialTableDemo() {
             }, 600);
           }),
       }}
-    />
+    /></Fragment>
   );
 }

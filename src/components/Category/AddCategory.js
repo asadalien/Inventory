@@ -38,7 +38,7 @@ const AddCategory = () => {
   return (
   
 
-    <PageBase title="Add Category" navigation="Add Category">
+    <PageBase title="Add Category" >
       <form className="p-4">
       
         <TextField

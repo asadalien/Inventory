@@ -1,4 +1,5 @@
 import { grey } from "@material-ui/core/colors";
+import { blue } from "@material-ui/core/colors";
 
 const styles = {
   navigation: {
@@ -9,12 +10,15 @@ const styles = {
     display: "block"
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
+    color: blue[700],
     fontWeight: 300,
     marginBottom: 20
   },
   paper: {
-    padding: 30
+    marginLeft:70,
+    marginRight:70,
+    padding: 10
   },
   clear: {
     clear: "both"

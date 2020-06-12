@@ -59,7 +59,7 @@ const drawStyles = theme => {
     },
     menuItem: {
       color: "white",
-      fontSize: 14
+      fontSize: 10
     }
   };
 };

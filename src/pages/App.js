@@ -11,6 +11,7 @@ import Dashboard from "./DashboardPage";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Form from "../components/Products/AddProduct";
 
+
 import AddCategory from "../components/Category/AddCategory";
 
 import AllCategories from "../components/Category/AllCategories";
@@ -74,7 +75,7 @@ class App extends React.Component {
       navDrawerOpen: !this.state.navDrawerOpen
     });
   }
-
+  
   handleChangeRightDrawer() {
     this.setState({
       rightDrawerOpen: !this.state.rightDrawerOpen
@@ -121,8 +122,8 @@ class App extends React.Component {
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/addproduct" component={Form} />
   
-            <Route path="/allproducts" component={DataTable} />
-            <Route path="/addcategory" component={AddCategory} />
+            <Route  path="/allproducts" component={DataTable} />
+            <Route  path="/addcategory" component={AddCategory} />
             <Route path="/allcategory" component={AllCategories} />
             <Route component={NotFound} />
           </Switch>
