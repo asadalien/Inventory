@@ -8,10 +8,14 @@ import LeftDrawer from "../components/LeftDrawer";
 import RightDrawer from "../components/RightDrawer";
 import Data from "../data";
 import Dashboard from "./DashboardPage";
+import LoginForm from "./LoginForm";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Form from "../components/Products/AddProduct";
 
+import Addstore from "../components/Store/Addstore";
 
+import Allstores from "../components/Store/Allstores";
+import EditStore from "../components/Store/EditStore";
 import AddCategory from "../components/Category/AddCategory";
 
 import AllCategories from "../components/Category/AllCategories";
@@ -125,6 +129,10 @@ class App extends React.Component {
             <Route  path="/allproducts" component={DataTable} />
             <Route  path="/addcategory" component={AddCategory} />
             <Route path="/allcategory" component={AllCategories} />
+            <Route path="/addstore" component={Addstore} />
+            <Route path="/editstore" component={EditStore} />
+            <Route path="/allstores" component={Allstores} />
+            <Route path="/login" component={LoginForm} />
             <Route component={NotFound} />
           </Switch>
         </div>

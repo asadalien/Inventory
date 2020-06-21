@@ -4,20 +4,22 @@ import MaterialTable from 'material-table';
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
-      { title: 'Product', field: 'Product' },
-      { title: 'Category', field: 'Category' }
+      
+      { title: 'Category', field: 'Category'  },
+      { title: 'Parent_Id', field:'id' ,type:'numeric' },
+      { title: 'URL', field:'Url' },
+      
     ],
     data: [
-      { Product: 'Mehmet', Category: 63 },
-      { Product: 'Mehmet', Category: 63 },
-      { Product: 'Mehmet', Category: 63 },
+      { Category: 'Sports', id: 3 ,Url:"http://localhost:3000/allcategory"}, 
+     { Category: 'Shirts', id: 6 ,Url:"http://localhost:3000/allcategory"},
       
     ],
   });
 
   return (
     <MaterialTable
-      title="All Products"
+      title="All Categories"
       columns={state.columns}
       data={state.data}
       editable={{

@@ -1,19 +1,64 @@
 import React from "react";
 import Faker from "faker";
-import Assessment from "@material-ui/icons/Assessment";
+import DashboardIcon from '@material-ui/icons/Dashboard';
 import GridOn from "@material-ui/icons/GridOn";
 import PermIdentity from "@material-ui/icons/PermIdentity";
 import Web from "@material-ui/icons/Web";
+import PeopleIcon from '@material-ui/icons/People';
 import BorderClear from "@material-ui/icons/BorderClear";
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import NotListedLocationIcon from '@material-ui/icons/NotListedLocation';
 import BorderOuter from "@material-ui/icons/BorderOuter";
+import ShoppingCartTwoToneIcon from '@material-ui/icons/ShoppingCartTwoTone';
 
 const data = {
   menus: [
-    { text: "DashBoard", icon: <Assessment />, link: "/dashboard" },
+    { text: "DashBoard", icon: <DashboardIcon />, link: "/dashboard" },
     
     {
+      text: "Users",
+      icon: <PeopleIcon/>,
+      // link: "/table",
+      subMenus: [
+        {
+          text: "Users",
+          icon: <BorderClear />,
+          link: "/addproduct"
+        },
+        {
+          text: "Roles",
+          icon: <BorderOuter />,
+          link: "/allproducts"
+        },
+        {
+          text: "Groups",
+          icon: <BorderOuter />,
+          link: "/allproducts"
+        }
+      ]
+    },
+    { text: "Brands", icon: <NotListedLocationIcon />, link: "/login" },
+    {
+      text: "Store",
+      icon: <StorefrontIcon/>,
+      // link: "/table",
+      subMenus: [
+        {
+          text: "New Store",
+          icon: <BorderClear />,
+          link: "/addstore"
+        },
+        {
+          text: "Stores",
+          icon: <BorderOuter />,
+          link: "/allstores"
+        }
+      ]
+    },
+  
+    {
       text: "Products",
-      icon: <GridOn />,
+      icon: <ShoppingCartTwoToneIcon/>,
       // link: "/table",
       subMenus: [
         {
@@ -28,6 +73,24 @@ const data = {
         }
       ]
     },
+    {
+      text: "Orders",
+      icon: <ShoppingCartTwoToneIcon/>,
+      // link: "/table",
+      subMenus: [
+        {
+          text: "Add Order",
+          icon: <BorderClear />,
+          link: "/addproduct"
+        },
+        {
+          text: "All Orderss",
+          icon: <BorderOuter />,
+          link: "/allproducts"
+        }
+      ]
+    },
+  
     {
       text: "Categories",
       icon: <GridOn />,
@@ -44,8 +107,9 @@ const data = {
           link: "/allcategory"
         }
       ]
-    },
-    { text: "Reviews", icon: <PermIdentity />, link: "/login" }
+    }, { text: "Reports", icon: <PermIdentity />, link: "/login" },
+    { text: "Company", icon: <PermIdentity />, link: "/login" },
+    { text: "Logout", icon: <PermIdentity />, link: "/login" }
   ],
   user: {
     userName: `${Faker.name.firstName()} ${Faker.name.lastName()}`,

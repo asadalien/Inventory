@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 //textfield
 import TextField from '../Formfields/TextField'
-//for database select
-import Dataselect from '../Formfields/dataselect'
-
 
 
 import { grey } from "@material-ui/core/colors";
@@ -17,7 +14,8 @@ import PageBase from "../PageBase";
 
 
 const AddCategory = () => {
-  const styles = {  
+  const styles = {
+
     toggleDiv: {
       marginTop: 20,
       marginBottom: 5
@@ -38,17 +36,12 @@ const AddCategory = () => {
   return (
   
 
-    <PageBase title="Add Category" >
+    <PageBase title="Edit Category" >
       <form className="p-4">
       
       <TextField label="Title" name="title" type="string"></TextField>
       <br></br>
-      <br></br>     
-      <TextField label="URL" name="url" type="string"></TextField>
-      <br></br>
-      <br></br>
-<Dataselect   ></Dataselect>
-
+          
      <div style={styles.buttons}>
           <Link to="/">
             <Button variant="contained">Cancel</Button>
@@ -60,7 +53,7 @@ const AddCategory = () => {
             type="submit"
             color="primary"
           >
-            Submit
+            Update
           </Button>
         </div>
       </form>

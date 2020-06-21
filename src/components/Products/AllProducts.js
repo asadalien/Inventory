@@ -2,21 +2,23 @@ import React, { Fragment } from 'react';
 
 import MaterialTable from 'material-table';
 import SocialButtons from '../Products/SocialButtons'
-
+import Switch from '@material-ui/core/Switch';
 
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
-      { title: 'Product', field: 'Product' },
-      { title: 'ProductName', field: 'ProductName' },
+      { title: 'Product', field: 'Product' ,type:"file" },
+      { title: 'Title', field: 'title' },
       { title: 'Price', field: 'Price', type: 'numeric' },
-      { title: 'Category', field: 'Category' }
+      { title: 'Description', field: 'description' },
+      { title: 'Category', field: 'category' },
+    { title: 'Taxable', field: 'status', type: 'boolean', render: rowData => <Switch checked=  {rowData.active}/>},
+      { title: 'Stock Status', field: 'stock' }
     ],
     data: [
-      { Product: 'Mehmet', ProductName: 'Baran', Price: 1987, Category: 63 },
-      { Product: 'Mehmet', ProductName: 'Baran', Price: 1987, Category: 63 },
-      { Product: 'Mehmet', ProductName: 'Baran', Price: 1987, Category: 63 },
-      
+      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',status:'false',stock:'Out of stock' },
+      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',status:'true',stock:'Out of stock' },
+      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',stock:'Out of stock' }
     ],
   });
 

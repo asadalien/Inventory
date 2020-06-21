@@ -133,7 +133,7 @@ class NestedMenuItem extends React.Component {
       <div>
       
       <MenuItem key={key} classes={{ root: classes.menuItem }} onClick={this.handleClick}>
-        <ListItemIcon className={classes.menuIcon}>{menu.icon}</ListItemIcon>
+        <ListItemIcon className={classes.menuIcon} style={{ color: "white" }}>{menu.icon}</ListItemIcon>
         <span>{menu.text}</span>
 
 
