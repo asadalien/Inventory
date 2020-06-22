@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import Button from "@material-ui/core/Button";
+//import Button from "@material-ui/core/Button";
 import Link from '@material-ui/core/Link';
 import MaterialTable from 'material-table';
 import SocialButtons from '../Products/SocialButtons'
 import Addstore from '../Store/Addstore'
 import EditAttributesIcon from '@material-ui/icons/EditAttributes';
-import { Edit } from '@material-ui/icons'
-import { EditDialogColumn } from 'react-md';
+//import { Edit } from '@material-ui/icons'
+//import { EditDialogColumn } from 'react-md';
 
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
@@ -49,7 +49,8 @@ export default function MaterialTableDemo() {
 
       icon: () => <EditAttributesIcon />,
       tooltip: <h1>Edit Form</h1>,
-      onClick: (event, rowData) =>       <Link to="/addstore" component={Addstore}/> ,
+      onClick: (event, rowData) =>      
+     <Link to="/addstore" component={Addstore}/> ,
       position: "row"
       
     }
@@ -60,7 +61,7 @@ export default function MaterialTableDemo() {
   <SocialButtons></SocialButtons>
     <MaterialTable
       title="All Stores"
-actions={actions}
+      actions={actions}
       columns={state.columns}
       data={state.data}
       options={{

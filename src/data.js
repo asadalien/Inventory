@@ -23,17 +23,17 @@ const data = {
         {
           text: "Users",
           icon: <BorderClear />,
-          link: "/addproduct"
+          link: "/login"
         },
         {
           text: "Roles",
           icon: <BorderOuter />,
-          link: "/allproducts"
+          link: "/login"
         },
         {
           text: "Groups",
           icon: <BorderOuter />,
-          link: "/allproducts"
+          link: "/login"
         }
       ]
     },

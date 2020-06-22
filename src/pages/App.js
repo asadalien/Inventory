@@ -15,7 +15,9 @@ import Form from "../components/Products/AddProduct";
 import Addstore from "../components/Store/Addstore";
 
 import Allstores from "../components/Store/Allstores";
+
 import EditStore from "../components/Store/EditStore";
+import EditProduct from "../components/Products/ProductEdit";
 import AddCategory from "../components/Category/AddCategory";
 
 import AllCategories from "../components/Category/AllCategories";
@@ -131,6 +133,7 @@ class App extends React.Component {
             <Route path="/allcategory" component={AllCategories} />
             <Route path="/addstore" component={Addstore} />
             <Route path="/editstore" component={EditStore} />
+            <Route path="/editproduct" component={EditProduct} />
             <Route path="/allstores" component={Allstores} />
             <Route path="/login" component={LoginForm} />
             <Route component={NotFound} />
