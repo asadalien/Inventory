@@ -5,14 +5,13 @@ import React from "react";
 import NewOrders from "../components/dashboard/NewOrders";
 import MonthlySales from "../components/dashboard/MonthlySales";
 import BrowserUsage from "../components/dashboard/BrowserUsage";
-import globalStyles from "../styles";
 import Grid from "@material-ui/core/Grid";
 import Data from "../data";
 
 const DashboardPage = () => {
   return (
     <div>
-      <h3 style={globalStyles.navigation}>Dashboard</h3>
+
 
 
       <Grid container spacing={3}>

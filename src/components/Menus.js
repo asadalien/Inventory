@@ -7,7 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import { withStyles } from "@material-ui/core/styles";
 import { fade } from "@material-ui/core/styles/colorManipulator";
-
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 const styles = theme => {
   return {
     chevronIcon: {
@@ -135,13 +135,14 @@ class NestedMenuItem extends React.Component {
       <MenuItem key={key} classes={{ root: classes.menuItem }} onClick={this.handleClick}>
         <ListItemIcon className={classes.menuIcon} style={{ color: "white" }}>{menu.icon}</ListItemIcon>
         <span>{menu.text}</span>
-
+<ArrowRightAltIcon style={{ color: "white" ,position: "absolute", right: 0}}></ArrowRightAltIcon>
 
         {/* only open when the menu is open and Nav Drawer is open */}
         <div
           ref={el => {
             this.anchor = el;
           }}
+         
           style={{ position: "absolute", right: 0 }}
         />
 
@@ -151,9 +152,11 @@ class NestedMenuItem extends React.Component {
               <MenuItem key={index} classes={{ root: classes.menuItem }}>
                 <ListItemIcon style={{ color: "white" }}>{subMenu.icon}</ListItemIcon>
                 <span>{subMenu.text}</span>
+                
               </MenuItem>
             </Link>
           ))}
+          
         </Menu>
         </MenuItem>
       </div>
