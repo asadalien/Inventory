@@ -132,16 +132,16 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/addproduct" component={Form} />
-            <Route  path="/allproducts" component={DataTable} />
-            <Route  path="/addcategory" component={AddCategory} />
-            <Route path="/allcategory" component={AllCategories} />
-            <Route path="/addstore" component={Addstore} />
-            <Route path="/editstore" component={EditStore} />
-            <Route path="/editproduct" component={EditProduct} />
-            <Route path="/allstores" component={Allstores} /> 
-            <Route path="/customernew" component={Customernew} />
-            <Route path="/customerlist" component={CustomerList} />
+            <Route path="/product/new" component={Form} />
+            <Route  path="/products" component={DataTable} />
+            <Route  path="/category/new" component={AddCategory} />
+            <Route path="/categories" component={AllCategories} />
+            <Route path="/store/new" component={Addstore} />
+            <Route path="/store/edit" component={EditStore} />
+            <Route path="/product/edit" component={EditProduct} />
+            <Route path="/stores" component={Allstores} /> 
+            <Route path="/customer/new" component={Customernew} />
+            <Route path="/customers" component={CustomerList} />
             
             <Route path="/login" component={LoginForm} />
             <Route component={NotFound} />

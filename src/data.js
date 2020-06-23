@@ -23,7 +23,7 @@ const data = {
         {
           text: "Users",
           icon: <BorderClear />,
-          link: "/customerlist",
+          link: "/customers",
 
         },
         {
@@ -47,12 +47,12 @@ const data = {
         {
           text: "New Store",
           icon: <BorderClear />,
-          link: "/addstore"
+          link: "/store/new"
         },
         {
           text: "Stores",
           icon: <BorderOuter />,
-          link: "/allstores"
+          link: "/stores"
         }
       ]
     },
@@ -65,12 +65,12 @@ const data = {
         {
           text: "Add Product",
           icon: <BorderClear />,
-          link: "/addproduct"
+          link: "/product/new"
         },
         {
           text: "All Products",
           icon: <BorderOuter />,
-          link: "/allproducts"
+          link: "/products"
         }
       ]
     },
@@ -82,12 +82,12 @@ const data = {
         {
           text: "Add Order",
           icon: <BorderClear />,
-          link: "/addproduct"
+          link: "/product/new"
         },
         {
           text: "All Orderss",
           icon: <BorderOuter />,
-          link: "/allproducts"
+          link: "/products"
         }
       ]
     },
@@ -100,12 +100,12 @@ const data = {
         {
           text: "Add Category",
           icon: <Web />,
-          link: "/addcategory"
+          link: "/category/new"
         },
         {
           text: "All Categories",
           icon: <Web />,
-          link: "/allcategory"
+          link: "/categories"
         }
       ]
     }, { text: "Reports", icon: <PermIdentity />, link: "/login" },
