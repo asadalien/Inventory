@@ -13,9 +13,12 @@ const useStyles = makeStyles((theme) => ({
   },div:{
     color:"secondary"
   },
+  btn:{
+    right:0,position:"absolute", margin: 9
+  }
 }));
 
-export default function IconLabelButtons() {
+export default function IconLabelButtons({text}) {
   const classes = useStyles();
 
   return (
@@ -49,6 +52,8 @@ export default function IconLabelButtons() {
         Export
       </Button>
       
+      
+
     </div>
   );
 }

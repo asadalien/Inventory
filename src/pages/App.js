@@ -16,6 +16,12 @@ import Addstore from "../components/Store/Addstore";
 
 import Allstores from "../components/Store/Allstores";
 
+
+import Customernew from "../components/users/Customer_new";
+
+
+import CustomerList from "../components/users/CustomerList";
+
 import EditStore from "../components/Store/EditStore";
 import EditProduct from "../components/Products/ProductEdit";
 import AddCategory from "../components/Category/AddCategory";
@@ -127,14 +133,16 @@ class App extends React.Component {
             <Route exact path="/" component={Dashboard} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/addproduct" component={Form} />
-  
             <Route  path="/allproducts" component={DataTable} />
             <Route  path="/addcategory" component={AddCategory} />
             <Route path="/allcategory" component={AllCategories} />
             <Route path="/addstore" component={Addstore} />
             <Route path="/editstore" component={EditStore} />
             <Route path="/editproduct" component={EditProduct} />
-            <Route path="/allstores" component={Allstores} />
+            <Route path="/allstores" component={Allstores} /> 
+            <Route path="/customernew" component={Customernew} />
+            <Route path="/customerlist" component={CustomerList} />
+            
             <Route path="/login" component={LoginForm} />
             <Route component={NotFound} />
           </Switch>

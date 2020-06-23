@@ -23,7 +23,7 @@ const data = {
         {
           text: "Users",
           icon: <BorderClear />,
-          link: "/login",
+          link: "/customerlist",
 
         },
         {

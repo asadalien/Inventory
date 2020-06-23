@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 //import Button from "@material-ui/core/Button";
-//import Link from '@material-ui/core/Link';
+import Link from '@material-ui/core/Link';
 import MaterialTable from 'material-table';
 import SocialButtons from '../Products/SocialButtons'
 //import Addstore from '../Store/Addstore'
@@ -50,8 +50,8 @@ export default function MaterialTableDemo() {
       icon: () => <EditAttributesIcon /> ,
       tooltip: <h1>Edit Form</h1>,
   
-      onClick: (event, rowData) =>      
-  alert("You printed " + rowData.description)
+      id:"link",
+      render: ({ row }) => (<Link to={{ pathname: `/addstore` }}>{row.name}</Link>)
       
     }
   ];

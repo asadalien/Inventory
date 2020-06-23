@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
 
+import React, { Fragment } from 'react';
+//import Button from '@material-ui/core/Button';
+//import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import MaterialTable from 'material-table';
 import SocialButtons from '../Products/SocialButtons'
 import Switch from '@material-ui/core/Switch';
-
-
+//import Grid from '@material-ui/core/Grid';
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
@@ -25,10 +26,13 @@ export default function MaterialTableDemo() {
 
   return (
 <Fragment>   
+  
   <SocialButtons ></SocialButtons>
+
     <MaterialTable
       title="All Products"
       columns={state.columns}
+  
       data={state.data}
       editable={{
         onRowAdd: (newData) =>
