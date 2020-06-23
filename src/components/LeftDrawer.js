@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-
 import { withStyles } from "@material-ui/core/styles";
-
 import Menus from "./Menus";
 
 const drawStyles = theme => {
@@ -27,7 +25,7 @@ const drawStyles = theme => {
     },
     logo: {
       cursor: "pointer",
-      fontSize: 22,
+       fontSize: 22,
       color: "white",
       lineHeight: "64px",
       fontWeight: 300,

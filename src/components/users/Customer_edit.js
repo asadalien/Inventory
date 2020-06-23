@@ -47,7 +47,7 @@ color:"secondary"
   
   return (
 
-    <PageBase  title="Customer Details" >
+    <PageBase  title="Customer Edit Details" >
       <form>
         
         <TextField label="Complete Address" name="Address" type="text"></TextField>
@@ -95,7 +95,7 @@ color:"secondary"
             type="submit"
             color="primary"
           >
-            Save
+            Update
           </Button>
         </div>
       </form>

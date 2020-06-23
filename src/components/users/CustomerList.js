@@ -3,26 +3,43 @@ import React, { Fragment } from 'react';
 //import Button from '@material-ui/core/Button';
 //import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import MaterialTable from 'material-table';
-import SocialButtons from '../Products/SocialButtons'
-import Switch from '@material-ui/core/Switch';
+import SocialButtons from '../Products/SocialButtons';
+import { Link } from "react-router-dom";
+//import Addstore from '../Store/Addstore'
+import EditAttributesIcon from '@material-ui/icons/EditAttributes';
+
 //import Grid from '@material-ui/core/Grid';
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
-      { title: 'Product', field: 'Product' ,type:"file" },
-      { title: 'Title', field: 'title' },
-      { title: 'Price', field: 'Price', type: 'numeric' },
-      { title: 'Description', field: 'description' },
-      { title: 'Category', field: 'category' },
-    { title: 'Taxable', field: 'status', type: 'boolean', render: rowData => <Switch checked=  {rowData.active}/>},
-      { title: 'Stock Status', field: 'stock' }
+      { title: 'Address', field: 'address'  },
+      { title: 'City', field: 'city' },
+      { title: 'State', field: 'state',  },
+      { title: 'Postcode', field: 'postcode' },
+      { title: 'Country', field: 'country' }
     ],
     data: [
-      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',status:'false',stock:'Out of stock' },
-      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',status:'true',stock:'Out of stock' },
-      { Product: 'Mehmet', title: 'sports', Price: 1987,description:'this is sports product',category:'sports',stock:'Out of stock' }
+      { address: 'E20/1 Street#4 Walton', city: 'lahore', 
+      state:"pakistan",postcode:'042',country:'Pakistan' },
+      { address: 'E20/1 Street#4 Walton', city: 'lahore', 
+      state: "pakistan",postcode:'042',country:'Pakistan' },
+      { address: 'E20/1 Street#4 Walton', city: 'lahore', 
+      state: "pakistan",postcode:'042',country:'Pakistan' }
+    
     ],
   });
+
+  const actions = [
+    {
+
+      icon: () => <EditAttributesIcon /> ,
+      tooltip: <h1>Edit Form</h1>,
+  
+      id:"link",
+      Cell: ({ row }) => (<Link to={{ pathname: `/addstore` }}>{row.name}</Link>)
+      
+    }
+  ];
 
   return (
 <Fragment>   
@@ -32,7 +49,7 @@ export default function MaterialTableDemo() {
     <MaterialTable
       title="All Products"
       columns={state.columns}
-  
+  actions={actions}
       data={state.data}
       editable={{
         onRowAdd: (newData) =>

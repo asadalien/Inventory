@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 //import Button from "@material-ui/core/Button";
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 import MaterialTable from 'material-table';
 import SocialButtons from '../Products/SocialButtons'
 //import Addstore from '../Store/Addstore'
@@ -51,7 +51,7 @@ export default function MaterialTableDemo() {
       tooltip: <h1>Edit Form</h1>,
   
       id:"link",
-      render: ({ row }) => (<Link to={{ pathname: `/addstore` }}>{row.name}</Link>)
+      render: ({ row }) => (<Link to="/addstore">{row.name}</Link>)
       
     }
   ];
